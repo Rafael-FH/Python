@@ -95,13 +95,13 @@ while turns > 0:
        print "Congrats, you won" 
        sys.exit()
          
-#prints out "guess a letter" and allows you to enter multiple letters and space
+#prints out "guess a letter" and allows you to enter a phrase/letter and space
    print
    guess = raw_input("guess a letter:")
    guesses += guess
    guesses += " "
    
-#prints out "nope" and takes on of your turns away if the letter isn't in the word
+#prints out "nope" and takes one of your turns away if the letter is incorrect
    if guess not in word:
        turns -= 1
        time.sleep(.5)     
