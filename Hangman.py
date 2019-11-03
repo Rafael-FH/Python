@@ -1,3 +1,4 @@
+#import time and system
 import time
 import sys
 
@@ -9,11 +10,14 @@ print "Start guessing..."
 time.sleep(0.5)
 guesses = ''
 
+#gives you 7 turns 
 turns = 7
-#print out 
+
+#if you have more than 0 turns, your fail is 0 (basically you havn't failed yet)
 while turns > 0:        
    failed = 0
-
+   
+#print out the body for every time you get the word wrong
    if turns == 6:
        print ("_________ ")
        print (" |/   |   ")
@@ -73,7 +77,8 @@ while turns > 0:
        print (" |   /    ")
        print (" |        ")
        print (" |__      ")
-
+      
+#prints out "_" until the correct letter is entered
    for char in word:
        if char in guesses:
            print char,
@@ -84,23 +89,27 @@ while turns > 0:
                 print "_",
            failed += 1
 
+#prints out "congrats, you won" when your fail is 0 and then it exits the program        
    if failed == 0:
        print ""       
        print "Congrats, you won" 
-       sys.exit()       
-
+       sys.exit()
+         
+#prints out "guess a letter" and allows you to enter multiple letters and space
    print
    guess = raw_input("guess a letter:")
    guesses += guess
    guesses += " "
-
+   
+#prints out "nope" and takes on of your turns away if the letter isn't in the word
    if guess not in word:
        turns -= 1
        time.sleep(.5)     
        print "nope"
        time.sleep(.5)   
        print "You have", + turns, 'more guesses'
-
+         
+#Prints the entire body when turns is 0 and reveals the answer
        if turns == 0:
            if turns == 0:
                print ("_________ ")
@@ -115,4 +124,5 @@ while turns > 0:
            time.sleep(1)
            print "you had a good try"
            print ""
+            
            
